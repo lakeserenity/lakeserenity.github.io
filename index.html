@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lake Serenity Campground</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Welcome to Lake Serenity Campground, Thaxton, VA</h1>
+
+    <div class="carousel" id="carousel">
+        <div class="carousel-images">
+            <img src="static/2.png" alt="Lake View" class="active">
+            <img src="static/1.png" alt="Camping Area">
+            <img src="static/3.png" alt="Nature Trail">
+            <img src="static/4.png" alt="Lake Trail">
+        </div>
+    </div>
+
+    <div class="text-area">
+        <p>Experience the beauty of nature at Lake Serenity Campground on private secluded land. Close to Vinton, Roanoke, and Bedford, perfect for a peaceful getaway. The only neighbors are the mountains and the whispering wind.. :-) Tents and campers are welcome, there's lots of deer and wildlife, trails to walk, and a fishing pond.</p>
+    </div>
+
+    <div class="link-area">
+        <a href="https://www.hipcamp.com/en-US/land/virginia-lake-serenity-campground-2ejhkv15" target="_blank">Book Your Campsite Now</a>
+    </div>
+
+    <script>
+        const carousel = document.querySelector('.carousel-images');
+        const images = carousel.querySelectorAll('img');
+        let index = 0;
+
+        function showNextImage() {
+            images[index].classList.remove('active');
+            index = (index + 1) % images.length;
+            images[index].classList.add('active');
+        }
+
+        setInterval(showNextImage, 3000);
+
+        // Initial active image
+        images[0].classList.add('active');
+    </script>
+
+</body>
+</html>
+
